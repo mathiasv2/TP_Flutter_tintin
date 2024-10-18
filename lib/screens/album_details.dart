@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart';
 import 'package:provider/provider.dart';
 import 'package:tintin/models/album.dart';
 import 'package:tintin/providers/reading_list_provider.dart';

@@ -63,4 +63,6 @@ class Album {
         // gps: json["gps"],
       );
     }
+
+  get id => null;
   }

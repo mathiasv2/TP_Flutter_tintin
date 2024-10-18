@@ -64,30 +64,6 @@ class LikesProvider extends ChangeNotifier{
     ];
   }
 
-  Future<Album?> getAlbumById(int id) async {
-    final db = await initializeDatabase();
-
-    final List<Map<String, dynamic>> result = await db.query(
-      "likedAlbums",
-      where: "id = ?",
-      whereArgs: [id],
-    );
-
-    if (result.isNotEmpty) {
-      return Album(
-        title: result.first['title'],
-        numero: result.first['numero'],
-        year: result.first['year'],
-        yearInColor: result.first['yearInColor'],
-        image: result.first['image'],
-        resume: result.first['resume'],
-        location: result.first['location'],
-      );
-    } else {
-      return null; 
-    }
-  }
-
   void likeAlbum(Album album){
     _albums.add(album);
 
@@ -104,4 +80,16 @@ class LikesProvider extends ChangeNotifier{
     return _albums.contains(album);
   }
 
+  // void likeAlbum(Album album) {
+  //   _albums.add(album);
+  //   insertAlbum(album).then((_) => notifyListeners());
+  // }
+
+  // void unlikeAlbum(Album album) {
+  //   _albums.remove(album);
+  //   deleteAlbum(album).then((_) => notifyListeners());
+  // }
+
+  // bool isLiked(Album album) {
+  //   return _albums.contains(album);
 }

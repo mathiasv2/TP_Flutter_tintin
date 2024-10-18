@@ -56,12 +56,10 @@ class _AlbumsMasterState extends State<AlbumsMaster> {
                         child: Icon(isLiked? Icons.favorite : Icons.favorite_border, color: Colors.white),
                         onPressed: (){
                           if (isLiked){
-                            likesProvider.likeAlbum(album);
-                          } else {
                             likesProvider.unlikeAlbum(album);
+                          } else {
+                            likesProvider.likeAlbum(album);
                           }
-                          // likesProvider.insertAlbum(album);
-                          // print(likesProvider.getLikedAlbums());
                         },
                       );
                     }),
